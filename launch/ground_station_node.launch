@@ -1,0 +1,13 @@
+<launch>
+    <!-- namespace in which the node is launched -->
+    <arg name="ns"/>
+    <!-- specifies the file that holds the configuration parameters -->
+    <arg name="config_filename" default="rf_params_ground.yaml"/>
+
+
+    <!-- launch the node -->
+    <node ns="$(arg ns)"pkg="multi_auv" type="ground_station_node.py" name="ground_station_node">
+        <!-- load the configuration paremters from the specified file as private parameters -->
+        <rosparam command="load" file="$(find multi_auv)/config/$(arg config_filename)"/>
+    </node>
+</launch>

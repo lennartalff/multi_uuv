@@ -1,0 +1,21 @@
+port: /dev/ttyUSB0
+serial_baud: 57600
+timeout: 0
+
+serial_speed: 57
+air_speed: 64
+netid: 25
+txpower: 10
+mavlink: 1
+oppresend: 0
+min_freq: 433050
+max_freq: 434790
+num_channels: 10
+duty_cycle: 100
+lbt_rssi: 0
+manchester: 0
+rtscts: 0
+nodeid: 0
+nodedestination: 65535
+syncany: 0
+nodecount: 5
