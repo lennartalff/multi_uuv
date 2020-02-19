@@ -204,9 +204,11 @@ def main(_nodeid, _port):
         _port,
         57600,
         timeout=3)
+    print("Serial connection established")
     time.sleep(1.0)
 
     enter_at_mode(serial_connection)
+    print("Entered AT mode")
     current_params = read_parameters_from_eeprom(serial_connection)
     if check_parameters(eeprom_parameters, current_params):
         print("Nothing needs to be changed")
@@ -237,6 +239,7 @@ if __name__ == "__main__":
     except IndexError:
         print("No Node ID specified. Usage: '{} <nodeid> [port]'".format(sys.argv[0]))
     else:
+        PORT = None
         if len(sys.argv) >= 3:
             PORT = sys.argv[2]
         main(NODE_ID, PORT)
